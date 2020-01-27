@@ -4,14 +4,17 @@
     $email = $_POST['email_input_login'];
     $pass = $_POST['pass_input_login'];
 
-    $data = mysqli_query($link,"SELECT * FROM 'user' WHERE `email` = '$email' AND `pass` = '$pass'");
-    if (mysqli_num_rows($data) > 0){
+    $data = "SELECT * FROM users WHERE email = '$email' && password = '$pass'";
+    $dataResult = mysqli_query($link, $data);
+    $resultado = mysqli_fetch_assoc($dataResult);
+    if (isset($resultado)){
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $pass;
-        header('index.php');
+        header('Location: index.php');
     }else{
         unset ($_SESSION['email']);
         unset ($_SESSION['password']);
-        header ('login.php');
+        $_SESSION['loginErro'] = "Usuário ou senha Inválido";
+        header ('Location: login.php');
     }
 ?>

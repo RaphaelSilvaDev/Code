@@ -1,4 +1,4 @@
-<?
+<?php
      include 'db.php';
 ?>
 
@@ -21,6 +21,12 @@
             <img src="./img/logoDark.png" id="logo">
         </div>
         <div id="login_div_rigth">
+            <h3><?php 
+               session_start();
+                if(isset($_SESSION['loginErro'])){
+                    echo $_SESSION['loginErro'];
+                }
+            ?></h3>
             <h1>Bem vindo ao Code!</h1>
             <h2>Faça seu login para continuar</h2>
             <input type="email" name="email_input_login" id="email_input_login" placeholder="Email...">
