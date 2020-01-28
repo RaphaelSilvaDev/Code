@@ -44,7 +44,7 @@ input, button, a{
 
 #login_div_left img{
     width: 45%;
-    margin-top: 25%;;
+    margin-top: 25%;
 }
 
 /*Rigth Side*/
@@ -112,7 +112,6 @@ input, button, a{
     flex-direction: column; 
     align-content: center;
     text-align: center;
-    display: none;
 }
 
 #login_div_left h1{

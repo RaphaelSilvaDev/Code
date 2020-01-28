@@ -1,4 +1,5 @@
 <?php
+     session_start();
      include 'db.php';
 ?>
 
@@ -22,7 +23,6 @@
         </div>
         <div id="login_div_rigth">
             <h3><?php 
-               session_start();
                 if(isset($_SESSION['loginErro'])){
                     echo $_SESSION['loginErro'];
                 }
@@ -34,26 +34,8 @@
             <input type="password" name="pass_input_login" id="pass_input_login" placeholder="Senha...">
             <br>
           <button id="login_button"">Entrar!</button>
-          <h3>Ainda não tenho conta, <a href="javascript:void(0)" onclick="register()">quero criar uma!</h3></a>
+          <h3>Ainda não tenho conta, <a href="register.php" onclick="register()">quero criar uma!</h3></a>
         </form>
         </div>
-
-    <div id="register_div_rigth">
-        <h1>Bem vindo ao Code!</h1>
-        <h2>Faça seu registro para utilizar o serviço!</h2>
-        <input type="name" id="name_input_register" placeholder="Nome...">
-        <br>
-        <input type="email" id="email_input_register" placeholder="Email...">
-        <br>
-        <input type="password" id="pass_input_register" placeholder="Senha...">
-        <br>
-        <label class="Container">
-            <input type="checkbox" id="terms">
-            <span class="checkmark"></span><a href="#">Eu aceito os Termos de Uso!</a>
-        </label>
-        <br><br>
-        <button id="login_button" onclick="signUp()">Registrar!</button>
-        <h3>Já tenho uma conta, <a href="javascript:void(0)" onclick="login()">quero usar ela!</h3></a>
-    </div>
 </body>
 </html>
