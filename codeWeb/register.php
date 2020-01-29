@@ -18,7 +18,6 @@
 </head>
 <body>
     <div id="login_div_left">
-        <form method="post" action="sigin.php" id="formLogin">
             <img src="./img/logoDark.png" id="logo">
         </div>
     <div id="register_div_rigth">
@@ -26,6 +25,15 @@
     <h3><?php 
                 if(isset($_SESSION['terms'])){
                     echo $_SESSION['terms'];
+                }
+                if(isset($_SESSION['passInvalid'])){
+                    echo $_SESSION['passInvalid'];
+                }
+                if(isset($_SESSION['emailInvalid'])){
+                    echo $_SESSION['emailInvalid'];
+                }
+                if(isset($_SESSION['emailExist'])){
+                    echo $_SESSION['emailExist'];
                 }
             ?></h3>
         <h1>Bem vindo ao Code!</h1>
@@ -41,7 +49,7 @@
             <span class="checkmark"></span><a href="#">Eu aceito os Termos de Uso!</a>
         </label>
         <br><br>
-        <button id="login_button"">Registrar!</button>
+        <button id="login_button">Registrar!</button>
         <h3>Já tenho uma conta, <a href="login.php" onclick="login()">quero usar ela!</h3></a>
         </form>
     </div>

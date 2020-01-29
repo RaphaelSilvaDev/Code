@@ -33,7 +33,7 @@
             <br>
             <input type="password" name="pass_input_login" id="pass_input_login" placeholder="Senha...">
             <br>
-          <button id="login_button"">Entrar!</button>
+          <button id="login_button">Entrar!</button>
           <h3>Ainda não tenho conta, <a href="register.php" onclick="register()">quero criar uma!</h3></a>
         </form>
         </div>

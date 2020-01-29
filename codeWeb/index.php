@@ -24,7 +24,7 @@
 </head>
 <body>
     <form method="POST" action="signout.php">
-    <button id="login_button"">Sair!</button>
+    <button id="logout_button">Sair!</button>
     </form>
 </body>
 </html>
