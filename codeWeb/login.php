@@ -1,6 +1,25 @@
 <?php
      session_start();
      include 'db.php';
+
+     if(isset($_POST['login_button'])){
+        $email = $_POST['email_input_login'];
+        $pass = $_POST['pass_input_login'];
+    
+        $data = "SELECT * FROM users WHERE email = '$email' && password = '$pass'";
+        $dataResult = mysqli_query($link, $data);
+        $resultado = mysqli_fetch_assoc($dataResult);
+        if (isset($resultado)){
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $pass;
+            header('Location: index.php');
+        }else{
+            unset ($_SESSION['email']);
+            unset ($_SESSION['password']);
+            $_SESSION['loginErro'] = "Usuário ou senha Inválido";
+            header ('Location: login.php');
+            }
+    }
 ?>
 
 <html lang="pt-br">
@@ -18,10 +37,12 @@
 </head>
 <body>
     <div id="login_div_left">
-        <form method="post" action="sigin.php" id="formLogin">
-            <img src="./img/logoDark.png" id="logo">
-        </div>
-        <div id="login_div_rigth">
+            <div>
+                <img src="./img/logoDark.png" id="logo">
+            </div>
+    </div>
+    <div id="login_div_rigth">~
+        <form method="post" id="formLogin">
             <h3><?php 
                 if(isset($_SESSION['loginErro'])){
                     echo $_SESSION['loginErro'];
@@ -33,9 +54,9 @@
             <br>
             <input type="password" name="pass_input_login" id="pass_input_login" placeholder="Senha...">
             <br>
-          <button id="login_button">Entrar!</button>
+            <input type="submit" value="Entrar!" id="login_button" name="login_button">
           <h3>Ainda não tenho conta, <a href="register.php" onclick="register()">quero criar uma!</h3></a>
         </form>
-        </div>
+    </div>
 </body>
 </html>

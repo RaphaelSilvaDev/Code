@@ -18,13 +18,29 @@
     <link href="https://fonts.googleapis.com/css?family=Exo+2:300,400,500,700&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="./fontawesome/css/all.css">
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
     <script src="./js/js.js"></script>
 </head>
 <body>
-    <form method="POST" action="signout.php">
-    <button id="logout_button">Sair!</button>
-    </form>
+    <header>
+        <img src="./img/smalllogoDark.png" id="logoIndex">
+        <form method="GET" id="Search">
+        <div id=Search>
+            <input type="text" id="searchInput" placeholder="Buscar..."/>
+            <button id="btnBusca"><i class="fas fa-search"></i></button> 
+        </div>
+        </form>
+        <form method="POST" action="signout.php" id="out">
+        <div id=out>
+                <button id="logout_button"><i class="fas fa-sign-out-alt fa-2x"></i></button> 
+            </div> 
+         </form>
+    </header>
+
+    <div id="bodyIndex">
+
+    </div>
 </body>
 </html>
